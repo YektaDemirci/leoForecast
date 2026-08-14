@@ -27,4 +27,4 @@ Each `*_flows/` directory has its own `*.sh` runner for the full sweep.
 
 ## External repos:
 Informer and DLinear models were trained using their respective repositories
-For chronos one needs, autogluon library which will require Python3.11+
+For chronos, one needs autogluon library and it requires Python3.11+
