@@ -1,0 +1,32 @@
+split: train [0,6249) -> 2001-10-31 09:20:00   val [6249,7142) -> 2001-11-06 14:10:00   test [7142,8928)
+
+TRAFFIC units -- forecasts re-seasonalised, scored against raw OT over buckets [7190, 8927]
+        method           MSE      MASE
+--------------------------------------
+      norros_f    1.7386e+22    1.1278
+     linearP_f    1.8439e+22    1.1690
+      farima_f    1.5483e+22    1.0549
+       persist    1.4329e+22    1.0007
+--------------------------------------
+per-forecast values -> results/fc_analytic_raw_p1.csv
+MASE lines appended -> results/res.txt
+
+MASE appended -> results/wifi_mase.csv
+
+=== 2026-08-13 11:33:48 -- score_wifi.py DESEASON  --T 48 --horizon 1 --p 1  ===
+wifiData.csv: 8928 samples @ 600s, 2001-09-18 00:00:00 .. 2001-11-18 23:50:00
+split: train [0,6249) -> 2001-10-31 09:20:00   val [6249,7142) -> 2001-11-06 14:10:00   test [7142,8928)
+
+TRAFFIC units -- forecasts re-seasonalised, scored against raw OT over buckets [7190, 8927]
+        method           MSE      MASE
+--------------------------------------
+      norros_f    1.3680e+22    0.9922
+     linearP_f    1.3903e+22    1.0011
+      farima_f    1.3102e+22    0.9665
+       persist    1.4199e+22    0.9973
+--------------------------------------
+per-forecast values -> results/fc_analytic_deseason_p1.csv
+MASE lines appended -> results/res.txt
+
+MASE appended -> results/wifi_mase.csv
+

@@ -1,0 +1,51 @@
+sample_dt = 1.5s   3 cells / 1 beam   alpha=1.04 (H=0.980|0.980|0.980)   buffer 1 MiB (8.39 Mbit/cell)
+offered 741.0 Mb/s over 760 Mb/s beam -> rho = 0.9750   test 2h   adaptive_mean=True
+decisions = 4800   train = 6300s (4200 samples)
+H measured (local Whittle, test window) = 0.967|0.975|0.992
+=================================================
+                              linearp     dlinear
+
+LOSS
+  loss ratio                1.517e-05   1.413e-05
+  vs fixed (x better)               -           -
+  dropped [Mb]                   81.0        75.4
+
+BACKLOG [Mb]
+  mean                          1.484       1.526
+  sd                            1.167       1.207
+
+PER-CELL BACKLOG [Mb]
+  mean c0                       0.448       0.428
+  mean c1                       0.535       0.573
+  mean c2                       0.500       0.525
+  max c0                        8.249       8.249
+  max c1                        8.308       8.389
+  max c2                        5.916       5.958
+  worst cell max                8.308       8.389
+  imbalance (max-min mean)      0.0872      0.1450
+
+BEAM
+  served [Mb/s]                740.97      740.97
+  wasted, avoidable [%]         2.504       2.504
+  wasted, system dry [%]        0.000       0.000
+
+FORECAST
+  MASE                         0.9223      0.9619
+  MASE c0                      0.9204      1.0005
+  MASE c1                      0.9219      0.9226
+  MASE c2                      0.9290      0.9298
+  MASE, equal-weighted         0.9237      0.9509
+  MASE, worst cell             0.9290      1.0005
+  sd ratio                     0.8498      0.8233
+  sd ratio c0                  0.8547      0.8169
+  sd ratio c1                  0.8378      0.8329
+  sd ratio c2                  0.8576      0.8342
+  sd ratio, equal-weighted      0.8500      0.8280
+  slot err [slots]              3.309       3.332
+  deficit [Mb/period]          0.0706      0.0805
+  surplus [Mb/period]          9.5787      9.5887
+
+PER-CELL DROPPED [Mb]
+  c0                             67.2        53.8
+  c1                             13.7        21.6
+  c2                              0.0         0.0

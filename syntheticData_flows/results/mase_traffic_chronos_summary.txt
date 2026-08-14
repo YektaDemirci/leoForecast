@@ -1,0 +1,20 @@
+mean over seeds +- half-width of the 95% t-CI over seeds (seeds are the unit of analysis)
+
+alpha=1.04  H_theory=0.98  n_seeds=10  n_fc=1392
+       variant                      MSE                 MASE
+     finetuned    8.8478e+12 +- 6.63e+11    0.9380 +- 0.0089
+      zeroshot    9.5550e+12 +- 7.13e+11    0.9762 +- 0.0104
+  paired finetuned - zeroshot: -3.90% +- 0.53%  (t=-16.13, p=0.0000, fine-tuning better in 10/10)
+
+alpha=1.24  H_theory=0.88  n_seeds=10  n_fc=1392
+       variant                      MSE                 MASE
+     finetuned    1.3746e+13 +- 4.28e+11    0.8961 +- 0.0104
+      zeroshot    1.4622e+13 +- 4.83e+11    0.9219 +- 0.0096
+  paired finetuned - zeroshot: -2.79% +- 0.37%  (t=-17.19, p=0.0000, fine-tuning better in 10/10)
+
+alpha=1.44  H_theory=0.78  n_seeds=10  n_fc=1392
+       variant                      MSE                 MASE
+     finetuned    6.7661e+12 +- 2.53e+11    0.8492 +- 0.0030
+      zeroshot    7.1136e+12 +- 2.73e+11    0.8711 +- 0.0054
+  paired finetuned - zeroshot: -2.51% +- 0.40%  (t=-13.79, p=0.0000, fine-tuning better in 10/10)
+

@@ -1,0 +1,23 @@
+mean over seeds +- half-width of the 95% t-CI over seeds (seeds are the unit of analysis)
+
+alpha=1.04  H_theory=0.98  H_fit=0.968+-0.008  H_whittle=0.981+-0.015  n_seeds=10  n_fc=1392
+      method                      MSE                 MASE
+    norros_f    8.6085e+12 +- 6.57e+11    0.9248 +- 0.0086
+   linearP_f    8.5859e+12 +- 6.60e+11    0.9237 +- 0.0093
+    farima_f    8.6298e+12 +- 7.33e+11    0.9252 +- 0.0080
+     persist    1.0111e+13 +- 7.94e+11    1.0001 +- 0.0005
+
+alpha=1.24  H_theory=0.88  H_fit=0.881+-0.007  H_whittle=0.875+-0.020  n_seeds=10  n_fc=1392
+      method                      MSE                 MASE
+    norros_f    1.3384e+13 +- 4.05e+11    0.8842 +- 0.0084
+   linearP_f    1.3367e+13 +- 4.10e+11    0.8840 +- 0.0081
+    farima_f    1.3365e+13 +- 3.98e+11    0.8842 +- 0.0078
+     persist    1.7021e+13 +- 4.86e+11    1.0000 +- 0.0004
+
+alpha=1.44  H_theory=0.78  H_fit=0.789+-0.006  H_whittle=0.782+-0.020  n_seeds=10  n_fc=1392
+      method                      MSE                 MASE
+    norros_f    6.6094e+12 +- 2.40e+11    0.8398 +- 0.0032
+   linearP_f    6.6009e+12 +- 2.43e+11    0.8393 +- 0.0030
+    farima_f    6.6009e+12 +- 2.40e+11    0.8393 +- 0.0029
+     persist    9.3044e+12 +- 3.41e+11    0.9997 +- 0.0004
+

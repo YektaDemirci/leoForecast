@@ -1,0 +1,64 @@
+pooled over R = 10 replicates (3 test + 3 train seeds each)
+alpha = 1.04   H = 0.980|0.980|0.980
+test 2h/replicate   500 sources/cell   fixed split 1|1|1   beam 790 Mb/s   buffer 1 MiB
+mean +/- SE of the mean; SE = sd/sqrt(R)
+
+========================================================================
+sample_dt = 1.5s   decisions/replicate = 4800
+  metric                             linearp           dlinear
+  loss_ratio               2.676e-06+/-2e-06 4.303e-06+/-4e-06
+  backlog_mean_Mb          9.050e-01+/-6e-02 9.152e-01+/-7e-02
+  backlog_sd_Mb            3.641e-01+/-2e-01 3.819e-01+/-2e-01
+  backlog_p95_Mb           1.497e+00+/-2e-01 1.591e+00+/-3e-01
+  backlog_p99_Mb           2.627e+00+/-9e-01 2.733e+00+/-1e+00
+  backlog_max_Mb           7.474e+00+/-2e+00 7.374e+00+/-2e+00
+  backlog_max_cell_Mb      4.571e+00+/-1e+00 4.676e+00+/-1e+00
+  backlog_mean_cell_max_Mb 3.231e-01+/-2e-02 3.327e-01+/-3e-02
+  backlog_imbalance_Mb     3.694e-02+/-5e-03 5.601e-02+/-2e-02
+  waste_avoidable_pct      5.426e+00+/-6e-01 5.426e+00+/-6e-01
+  served_Mbps              7.471e+02+/-4e+00 7.471e+02+/-4e+00
+  forecast_mase            9.225e-01+/-9e-04 9.648e-01+/-2e-02
+  forecast_mase_eq         9.225e-01+/-9e-04 9.648e-01+/-2e-02
+  forecast_mase_worst      9.272e-01+/-1e-03 1.017e+00+/-4e-02
+  forecast_sd_ratio        8.383e-01+/-6e-03 8.175e-01+/-7e-03
+  forecast_sd_ratio_eq     8.363e-01+/-6e-03 8.157e-01+/-6e-03
+  slot_err                 3.846e+00+/-4e-02 4.035e+00+/-1e-01
+  deficit_Mb_per_period    9.656e-03+/-7e-03 1.222e-02+/-9e-03
+  surplus_Mb_per_period    2.144e+01+/-2e+00 2.144e+01+/-2e+00
+  backlog_max_c0_Mb        3.728e+00+/-1e+00 3.756e+00+/-9e-01
+  backlog_max_c1_Mb        4.213e+00+/-1e+00 4.116e+00+/-1e+00
+  backlog_max_c2_Mb        4.133e+00+/-1e+00 4.248e+00+/-1e+00
+  backlog_mean_c0_Mb       3.052e-01+/-2e-02 2.938e-01+/-1e-02
+  backlog_mean_c1_Mb       3.054e-01+/-2e-02 3.112e-01+/-3e-02
+  backlog_mean_c2_Mb       2.944e-01+/-2e-02 3.102e-01+/-4e-02
+  backlog_p95_c0_Mb        7.164e-01+/-4e-02 6.977e-01+/-2e-02
+  backlog_p95_c1_Mb        7.452e-01+/-8e-02 7.811e-01+/-1e-01
+  backlog_p95_c2_Mb        6.401e-01+/-6e-02 7.605e-01+/-2e-01
+  backlog_p99_c0_Mb        1.197e+00+/-3e-01 9.700e-01+/-1e-01
+  backlog_p99_c1_Mb        1.329e+00+/-4e-01 1.425e+00+/-5e-01
+  backlog_p99_c2_Mb        1.173e+00+/-3e-01 1.407e+00+/-5e-01
+  backlog_sd_c0_Mb         2.927e-01+/-5e-02 2.657e-01+/-3e-02
+  backlog_sd_c1_Mb         2.989e-01+/-6e-02 3.129e-01+/-7e-02
+  backlog_sd_c2_Mb         2.941e-01+/-5e-02 3.275e-01+/-8e-02
+  forecast_mase_c0         9.216e-01+/-2e-03 9.342e-01+/-5e-03
+  forecast_mase_c1         9.227e-01+/-2e-03 9.867e-01+/-3e-02
+  forecast_mase_c2         9.232e-01+/-1e-03 9.736e-01+/-4e-02
+  forecast_sd_ratio_c0     8.387e-01+/-1e-02 8.218e-01+/-1e-02
+  forecast_sd_ratio_c1     8.412e-01+/-6e-03 8.208e-01+/-7e-03
+  forecast_sd_ratio_c2     8.290e-01+/-7e-03 8.045e-01+/-9e-03
+  slot_err_c0              3.841e+00+/-5e-02 4.079e+00+/-1e-01
+  slot_err_c1              3.858e+00+/-5e-02 4.044e+00+/-1e-01
+  slot_err_c2              3.838e+00+/-5e-02 3.983e+00+/-1e-01
+
+  PAIRED (same seeds; negative = first policy better).  t-interval at 95%
+    dmax_cell[linearp-dlinear] = -0.1050 +/- 0.2503 Mb   linearp better in 5/10
+    dimbalance[linearp-dlinear] = -0.0191 +/- 0.0469 Mb   linearp better in 3/10
+    dmax[linearp-dlinear] = +0.0997 +/- 0.3798 Mb   linearp better in 6/10
+    dmean[linearp-dlinear] = -0.0102 +/- 0.0248 Mb   linearp better in 4/10
+    dmase[linearp-dlinear] = -0.0423 +/- 0.0457    linearp better in 10/10
+    dmase_eq[linearp-dlinear] = -0.0423 +/- 0.0456    linearp better in 10/10
+    dmase_worst[linearp-dlinear] = -0.0897 +/- 0.1004    linearp better in 10/10
+  * dsd_ratio[linearp-dlinear] = +0.0208 +/- 0.0082    linearp better in 0/10
+  * dsd_ratio_eq[linearp-dlinear] = +0.0206 +/- 0.0079    linearp better in 0/10
+    loss[linearp]/loss[dlinear] = 0.705 (x/ 1.261)   linearp better in 2/3
+

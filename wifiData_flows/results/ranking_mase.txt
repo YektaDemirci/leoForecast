@@ -1,0 +1,52 @@
+MASE RANKING - wifiData.csv, LOOKBACK=48
+Source: res.txt   (lower MASE = better)
+
+================================================================
+RAW
+================================================================
+RANK  FORECASTER      MASE
+  1   DLINEAR       0.9864
+  2   CHRNS_TUNED   0.9873
+  3   PERSIST       1.0007
+  4   INFORMER      1.0229
+  5   FARIMA_F      1.0549
+  6   CHRNS_ZERO    1.0659
+  7   NORROS_F      1.1278
+  8   LINEARP_F     1.1690
+
+================================================================
+DESEASONALIZED
+================================================================
+RANK  FORECASTER      MASE
+  1   FARIMA_F      0.9665
+  2   DLINEAR       0.9756
+  3   CHRNS_TUNED   0.9903
+  4   NORROS_F      0.9922
+  5   INFORMER      0.9966
+  6   PERSIST       0.9973
+  7   LINEARP_F     1.0011
+  8   CHRNS_ZERO    1.0528
+
+================================================================
+SIDE BY SIDE (sorted by deseasonalized MASE)
+================================================================
+FORECASTER       RAW  RANK      DESEAS  RANK     DELTA
+FARIMA_F      1.0549     5      0.9665     1   -0.0884
+DLINEAR       0.9864     1      0.9756     2   -0.0108
+CHRNS_TUNED   0.9873     2      0.9903     3   +0.0030
+NORROS_F      1.1278     7      0.9922     4   -0.1356
+INFORMER      1.0229     4      0.9966     5   -0.0263
+PERSIST       1.0007     3      0.9973     6   -0.0034
+LINEARP_F     1.1690     8      1.0011     7   -0.1679
+CHRNS_ZERO    1.0659     6      1.0528     8   -0.0131
+
+DELTA = deseasonalized - raw (negative = deseasonalizing helped)
+
+NOTES
+- Only DLINEAR and CHRNS_TUNED beat the naive baseline (MASE < 1) on raw data.
+- Deseasonalizing helps everything except CHRNS_TUNED (+0.0030).
+- Biggest gains from deseasonalizing: LINEARP_F (-0.1679), NORROS_F (-0.1356),
+  FARIMA_F (-0.0884) - the classical/self-similar models rely most on the
+  seasonality being removed first.
+- Best overall: FARIMA_F deseasonalized (0.9665).
+- All results sit close to 1.0, i.e. near naive-persistence performance.

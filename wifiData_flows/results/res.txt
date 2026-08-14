@@ -1,0 +1,20 @@
+FORECASTER   LOOKBACK             DATANAME          SERIES      MASE
+NORROS_F           48         wifiData.csv             raw    1.1278
+LINEARP_F          48         wifiData.csv             raw    1.1690
+FARIMA_F           48         wifiData.csv             raw    1.0549
+PERSIST            48         wifiData.csv             raw    1.0007
+NORROS_F           48         wifiData.csv  deseasonalised    0.9922
+LINEARP_F          48         wifiData.csv  deseasonalised    1.0011
+FARIMA_F           48         wifiData.csv  deseasonalised    0.9665
+PERSIST            48         wifiData.csv  deseasonalised    0.9973
+
+CHRNS_ZERO      48      wifiData.csv             raw    1.0659
+CHRNS_ZERO      48      wifiData.csv  deseasonalized    1.0528
+CHRNS_TUNED     48      wifiData.csv             raw    0.9873
+CHRNS_TUNED     48      wifiData.csv  deseasonalized    0.9903
+
+DLINEAR 48 wifiData.csv raw 0.9864
+DLINEAR 48 wifiData.csv deseasonalized 0.9756
+
+INFORMER 48 wifiData.csv raw 1.0229
+INFORMER 48 wifiData.csv deseasonalized 0.9966

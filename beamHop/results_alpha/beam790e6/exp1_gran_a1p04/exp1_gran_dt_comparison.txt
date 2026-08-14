@@ -1,0 +1,20 @@
+exp1_gran (alpha=1.04, beam 790 Mb/s, buffer 1 MiB) -- forecaster comparison vs sample_dt
+R = 10 replicates per (sample_dt, policy); mean +/- SE of the mean
+max mean per-cell backlog = backlog_mean_cell_max_Mb (per replicate: max over cells of that cell's mean backlog)
+
+sample_dt [s]  decisions   policy             loss ratio       backlog p95 [Mb]   max mean per-cell [Mb]
+--------------------------------------------------------------------------------------------------------
+        0.015     480000  linearp    6.5286e-07+/-6e-07    1.3685e+00+/-1e-01      3.6931e-01+/-3e-02
+        0.015     480000  dlinear    6.8677e-07+/-6e-07    1.3724e+00+/-1e-01      3.7204e-01+/-3e-02
+
+         0.15      48000  linearp    7.0187e-07+/-6e-07    1.4047e+00+/-1e-01      3.2080e-01+/-2e-02
+         0.15      48000  dlinear    7.7056e-07+/-7e-07    1.4308e+00+/-1e-01      3.3051e-01+/-3e-02
+
+          1.5       4800  linearp    3.8236e-06+/-3e-06    1.8857e+00+/-4e-01      3.4912e-01+/-3e-02
+          1.5       4800  dlinear    6.5134e-06+/-5e-06    2.0123e+00+/-5e-01      3.7518e-01+/-5e-02
+
+           15        480  linearp    5.1662e-05+/-3e-05    2.9129e+00+/-9e-01      4.2126e-01+/-7e-02
+           15        480  dlinear    6.0421e-05+/-4e-05    2.9902e+00+/-9e-01      4.5784e-01+/-9e-02
+
+           60        120  linearp    8.9749e-05+/-5e-05    3.4408e+00+/-1e+00      4.6213e-01+/-8e-02
+           60        120  dlinear    1.0136e-04+/-6e-05    3.4537e+00+/-1e+00      5.0636e-01+/-1e-01

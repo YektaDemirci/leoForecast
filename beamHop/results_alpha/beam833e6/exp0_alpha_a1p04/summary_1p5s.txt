@@ -1,0 +1,51 @@
+sample_dt = 1.5s   3 cells / 1 beam   alpha=1.04 (H=0.980|0.980|0.980)   buffer 1 MiB (8.39 Mbit/cell)
+offered 732.9 Mb/s over 833 Mb/s beam -> rho = 0.8798   test 2h   adaptive_mean=True
+decisions = 4800   train = 6300s (4200 samples)
+H measured (local Whittle, test window) = 0.989|0.967|1.000
+=================================================
+                              linearp     dlinear
+
+LOSS
+  loss ratio                0.000e+00   0.000e+00
+  vs fixed (x better)               -           -
+  dropped [Mb]                    0.0         0.0
+
+BACKLOG [Mb]
+  mean                          0.755       0.754
+  sd                            0.068       0.067
+
+PER-CELL BACKLOG [Mb]
+  mean c0                       0.260       0.259
+  mean c1                       0.246       0.247
+  mean c2                       0.248       0.248
+  max c0                        1.048       1.048
+  max c1                        1.025       1.039
+  max c2                        1.031       1.047
+  worst cell max                1.048       1.048
+  imbalance (max-min mean)      0.0138      0.0124
+
+BEAM
+  served [Mb/s]                732.86      732.86
+  wasted, avoidable [%]        12.021      12.021
+  wasted, system dry [%]        0.000       0.000
+
+FORECAST
+  MASE                         0.9246      0.9296
+  MASE c0                      0.9233      0.9317
+  MASE c1                      0.9316      0.9312
+  MASE c2                      0.9188      0.9259
+  MASE, equal-weighted         0.9246      0.9296
+  MASE, worst cell             0.9316      0.9317
+  sd ratio                     0.8455      0.8348
+  sd ratio c0                  0.8372      0.8310
+  sd ratio c1                  0.8234      0.8228
+  sd ratio c2                  0.8687      0.8470
+  sd ratio, equal-weighted      0.8431      0.8336
+  slot err [slots]              3.833       3.876
+  deficit [Mb/period]          0.0000      0.0000
+  surplus [Mb/period]         50.0694     50.0694
+
+PER-CELL DROPPED [Mb]
+  c0                              0.0         0.0
+  c1                              0.0         0.0
+  c2                              0.0         0.0

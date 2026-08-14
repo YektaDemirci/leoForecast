@@ -18,6 +18,7 @@ csv.field_size_limit(sys.maxsize)
 
 # Sanity threshold — any timestamp before this is treated as corrupt/malformed.
 # Early 2000s data: nothing valid should be before year 2000.
+# End of dataset late November
 MIN_TS = 946684800  # 2000-01-01 00:00:00 UTC
 
 

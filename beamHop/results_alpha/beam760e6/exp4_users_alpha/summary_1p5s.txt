@@ -1,0 +1,51 @@
+sample_dt = 1.5s   3 cells / 1 beam   alpha=1.04|1.24|1.44 (H=0.980|0.880|0.780)   buffer 1 MiB (8.39 Mbit/cell)
+offered 739.4 Mb/s over 760 Mb/s beam -> rho = 0.9729   test 2h   adaptive_mean=True
+decisions = 4800   train = 6300s (4200 samples)
+H measured (local Whittle, test window) = 0.967|0.869|0.731
+=================================================
+                              linearp     dlinear
+
+LOSS
+  loss ratio                1.846e-05   1.878e-05
+  vs fixed (x better)               -           -
+  dropped [Mb]                   98.3       100.0
+
+BACKLOG [Mb]
+  mean                          1.569       1.602
+  sd                            1.281       1.299
+
+PER-CELL BACKLOG [Mb]
+  mean c0                       0.434       0.421
+  mean c1                       0.640       0.647
+  mean c2                       0.495       0.533
+  max c0                        8.184       8.179
+  max c1                        8.389       8.389
+  max c2                        6.228       6.726
+  worst cell max                8.389       8.389
+  imbalance (max-min mean)      0.2068      0.2257
+
+BEAM
+  served [Mb/s]                739.39      739.39
+  wasted, avoidable [%]         2.712       2.712
+  wasted, system dry [%]        0.000       0.000
+
+FORECAST
+  MASE                         0.8924      0.9369
+  MASE c0                      0.9204      1.0005
+  MASE c1                      0.8824      0.9031
+  MASE c2                      0.8360      0.8370
+  MASE, equal-weighted         0.8796      0.9135
+  MASE, worst cell             0.9204      1.0005
+  sd ratio                     0.8015      0.7661
+  sd ratio c0                  0.8547      0.8169
+  sd ratio c1                  0.6818      0.6514
+  sd ratio c2                  0.5039      0.4894
+  sd ratio, equal-weighted      0.6801      0.6526
+  slot err [slots]              3.506       3.487
+  deficit [Mb/period]          0.0709      0.0756
+  surplus [Mb/period]         10.3687     10.3735
+
+PER-CELL DROPPED [Mb]
+  c0                             57.2        54.7
+  c1                             41.0        45.3
+  c2                              0.0         0.0

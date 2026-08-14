@@ -1,0 +1,561 @@
+device=cpu  cells=3  X=500/cell  alpha=1.04 (H=0.980|0.980|0.980)
+TEST  10 replicate(s) x 3 cells, 7200s = 2h measured @1ms (+36s warm-up) = 7.24e+06 bins/cell
+TRAIN 4200 samples per granularity, refit per replicate with its own seeds, generated at bin width = sample_dt
+buffer 1 MiB = 8.39 Mbit/cell   beam 833 Mb/s   adaptive_mean=True   backlog_aware=True
+
+##############################################################################
+REPLICATE 0   test seeds [101, 102, 103]   train seeds [500101, 500102, 500103]
+test traffic generated in 14.0s   offered 732.9 Mb/s   rho = 0.880
+
+==============================================================================
+[rep 0] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.989  c1=0.967  c2=1.000   [nominal 0.98|0.98|0.98]
+    cell0: H_est=1.000   m_train=244.3 vs m_test=239.5 Mb/s (+2.0%)
+    cell1: H_est=1.000   m_train=244.6 vs m_test=247.7 Mb/s (-1.2%)
+    cell2: H_est=1.000   m_train=248.9 vs m_test=245.7 Mb/s (+1.3%)
+      linearP cell0: H_fit=0.950 sum(w)=0.964
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.955 sum(w)=0.968
+      dlinear cell0: val NMSE=0.3581  scaler mu=366.08 Mb sd=8.11 Mb
+      dlinear cell1: val NMSE=0.3318  scaler mu=367.81 Mb sd=7.86 Mb
+      dlinear cell2: val NMSE=0.3930  scaler mu=374.24 Mb sd=8.55 Mb
+    (train gen + fit: 9.7s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.02% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          732.9 Mb/s
+  backlog         mean    0.755 Mb   p95    1.199   p99    1.233   max    1.448
+    cell0        mean    0.260 Mb   p95    0.718   p99    0.742   max    1.048
+    cell1        mean    0.246 Mb   p95    0.512   p99    0.729   max    1.025
+    cell2        mean    0.248 Mb   p95    0.513   p99    0.735   max    1.031
+    worst cell    max    1.048 Mb   imbalance 0.014 Mb
+  forecast MASE   0.9246   slot err 3.833 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.0694 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.02% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          732.9 Mb/s
+  backlog         mean    0.754 Mb   p95    1.198   p99    1.232   max    1.500
+    cell0        mean    0.259 Mb   p95    0.717   p99    0.742   max    1.048
+    cell1        mean    0.247 Mb   p95    0.513   p99    0.733   max    1.039
+    cell2        mean    0.248 Mb   p95    0.513   p99    0.733   max    1.047
+    worst cell    max    1.048 Mb   imbalance 0.012 Mb
+  forecast MASE   0.9296   slot err 3.876 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.0694 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/backlog_1p5s_*.png
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/summary_1p5s.txt
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (2 rows)
+
+replicate 0 done in 100s
+
+##############################################################################
+REPLICATE 1   test seeds [104, 105, 106]   train seeds [500104, 500105, 500106]
+test traffic generated in 15.8s   offered 742.9 Mb/s   rho = 0.892
+
+==============================================================================
+[rep 1] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.936  c1=0.984  c2=0.952   [nominal 0.98|0.98|0.98]
+    cell0: H_est=1.000   m_train=243.3 vs m_test=245.2 Mb/s (-0.8%)
+    cell1: H_est=1.000   m_train=272.6 vs m_test=247.3 Mb/s (+10.2%)
+    cell2: H_est=0.941   m_train=253.4 vs m_test=250.3 Mb/s (+1.2%)
+      linearP cell0: H_fit=0.945 sum(w)=0.960
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.945 sum(w)=0.960
+      dlinear cell0: val NMSE=0.4497  scaler mu=364.75 Mb sd=7.48 Mb
+      dlinear cell1: val NMSE=0.4609  scaler mu=409.60 Mb sd=9.27 Mb
+      dlinear cell2: val NMSE=0.4150  scaler mu=380.68 Mb sd=7.52 Mb
+    (train gen + fit: 10.1s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     10.82% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          742.9 Mb/s
+  backlog         mean    0.762 Mb   p95    1.218   p99    1.253   max    1.484
+    cell0        mean    0.259 Mb   p95    0.724   p99    0.754   max    1.065
+    cell1        mean    0.254 Mb   p95    0.699   p99    0.757   max    1.055
+    cell2        mean    0.250 Mb   p95    0.516   p99    0.735   max    1.058
+    worst cell    max    1.065 Mb   imbalance 0.009 Mb
+  forecast MASE   0.9206   slot err 3.962 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 45.0514 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     10.82% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          742.9 Mb/s
+  backlog         mean    0.764 Mb   p95    1.218   p99    1.254   max    1.509
+    cell0        mean    0.263 Mb   p95    0.732   p99    0.758   max    1.066
+    cell1        mean    0.249 Mb   p95    0.517   p99    0.742   max    1.048
+    cell2        mean    0.251 Mb   p95    0.518   p99    0.744   max    1.055
+    worst cell    max    1.066 Mb   imbalance 0.014 Mb
+  forecast MASE   1.0294   slot err 4.414 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 45.0514 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (4 rows)
+
+replicate 1 done in 101s
+
+##############################################################################
+REPLICATE 2   test seeds [107, 108, 109]   train seeds [500107, 500108, 500109]
+test traffic generated in 13.5s   offered 760.1 Mb/s   rho = 0.913
+
+==============================================================================
+[rep 2] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.899  c1=0.997  c2=0.985   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.984   m_train=253.7 vs m_test=247.7 Mb/s (+2.4%)
+    cell1: H_est=0.974   m_train=250.4 vs m_test=259.8 Mb/s (-3.6%)
+    cell2: H_est=0.965   m_train=251.0 vs m_test=252.6 Mb/s (-0.6%)
+      linearP cell0: H_fit=0.955 sum(w)=0.968
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.955 sum(w)=0.968
+      dlinear cell0: val NMSE=0.4072  scaler mu=380.47 Mb sd=7.85 Mb
+      dlinear cell1: val NMSE=0.4341  scaler mu=374.89 Mb sd=7.30 Mb
+      dlinear cell2: val NMSE=0.3800  scaler mu=376.54 Mb sd=7.23 Mb
+    (train gen + fit: 7.9s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.75% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          760.1 Mb/s
+  backlog         mean    0.797 Mb   p95    1.243   p99    1.275   max    1.527
+    cell0        mean    0.279 Mb   p95    0.742   p99    0.767   max    1.095
+    cell1        mean    0.254 Mb   p95    0.531   p99    0.545   max    1.048
+    cell2        mean    0.264 Mb   p95    0.718   p99    0.772   max    1.071
+    worst cell    max    1.095 Mb   imbalance 0.024 Mb
+  forecast MASE   0.9222   slot err 3.624 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 36.4417 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.75% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          760.1 Mb/s
+  backlog         mean    0.793 Mb   p95    1.243   p99    1.275   max    1.527
+    cell0        mean    0.274 Mb   p95    0.741   p99    0.766   max    1.086
+    cell1        mean    0.255 Mb   p95    0.532   p99    0.546   max    1.050
+    cell2        mean    0.264 Mb   p95    0.720   p99    0.772   max    1.074
+    worst cell    max    1.086 Mb   imbalance 0.019 Mb
+  forecast MASE   0.9487   slot err 3.835 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 36.4417 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (6 rows)
+
+replicate 2 done in 96s
+
+##############################################################################
+REPLICATE 3   test seeds [110, 111, 112]   train seeds [500110, 500111, 500112]
+test traffic generated in 14.6s   offered 731.3 Mb/s   rho = 0.878
+
+==============================================================================
+[rep 3] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.977  c1=0.981  c2=0.971   [nominal 0.98|0.98|0.98]
+    cell0: H_est=1.000   m_train=238.0 vs m_test=243.7 Mb/s (-2.3%)
+    cell1: H_est=0.987   m_train=242.9 vs m_test=239.8 Mb/s (+1.3%)
+    cell2: H_est=1.000   m_train=251.8 vs m_test=247.8 Mb/s (+1.6%)
+      linearP cell0: H_fit=0.960 sum(w)=0.972
+      linearP cell1: H_fit=0.970 sum(w)=0.980
+      linearP cell2: H_fit=0.960 sum(w)=0.972
+      dlinear cell0: val NMSE=0.3886  scaler mu=357.79 Mb sd=8.60 Mb
+      dlinear cell1: val NMSE=0.3907  scaler mu=365.45 Mb sd=7.78 Mb
+      dlinear cell2: val NMSE=0.2828  scaler mu=379.50 Mb sd=7.12 Mb
+    (train gen + fit: 7.9s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.21% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          731.3 Mb/s
+  backlog         mean    0.753 Mb   p95    1.199   p99    1.231   max    1.449
+    cell0        mean    0.250 Mb   p95    0.515   p99    0.736   max    1.029
+    cell1        mean    0.258 Mb   p95    0.718   p99    0.915   max    1.035
+    cell2        mean    0.245 Mb   p95    0.511   p99    0.707   max    1.035
+    worst cell    max    1.035 Mb   imbalance 0.012 Mb
+  forecast MASE   0.9228   slot err 3.951 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.8447 Mb per cell-period
+  (37s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.21% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          731.3 Mb/s
+  backlog         mean    0.753 Mb   p95    1.199   p99    1.231   max    1.450
+    cell0        mean    0.251 Mb   p95    0.520   p99    0.737   max    1.034
+    cell1        mean    0.257 Mb   p95    0.717   p99    0.899   max    1.039
+    cell2        mean    0.245 Mb   p95    0.511   p99    0.703   max    1.030
+    worst cell    max    1.039 Mb   imbalance 0.012 Mb
+  forecast MASE   0.9265   slot err 3.983 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.8447 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (8 rows)
+
+replicate 3 done in 97s
+
+##############################################################################
+REPLICATE 4   test seeds [113, 114, 115]   train seeds [500113, 500114, 500115]
+test traffic generated in 14.1s   offered 731.6 Mb/s   rho = 0.878
+
+==============================================================================
+[rep 4] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=1.000  c1=0.963  c2=0.958   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.996   m_train=241.1 vs m_test=231.9 Mb/s (+4.0%)
+    cell1: H_est=0.942   m_train=231.5 vs m_test=244.5 Mb/s (-5.3%)
+    cell2: H_est=0.928   m_train=259.3 vs m_test=255.3 Mb/s (+1.6%)
+      linearP cell0: H_fit=0.960 sum(w)=0.972
+      linearP cell1: H_fit=0.960 sum(w)=0.972
+      linearP cell2: H_fit=0.960 sum(w)=0.972
+      dlinear cell0: val NMSE=0.4300  scaler mu=360.25 Mb sd=7.88 Mb
+      dlinear cell1: val NMSE=0.4458  scaler mu=348.39 Mb sd=6.66 Mb
+      dlinear cell2: val NMSE=0.4685  scaler mu=388.82 Mb sd=7.46 Mb
+    (train gen + fit: 7.8s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.17% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          731.6 Mb/s
+  backlog         mean    0.773 Mb   p95    1.181   p99    1.217   max    1.433
+    cell0        mean    0.275 Mb   p95    0.704   p99    0.731   max    1.035
+    cell1        mean    0.253 Mb   p95    0.524   p99    0.743   max    1.014
+    cell2        mean    0.244 Mb   p95    0.522   p99    0.535   max    0.797
+    worst cell    max    1.035 Mb   imbalance 0.031 Mb
+  forecast MASE   0.9239   slot err 3.900 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.6837 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     12.17% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          731.6 Mb/s
+  backlog         mean    0.772 Mb   p95    1.182   p99    1.217   max    1.460
+    cell0        mean    0.273 Mb   p95    0.704   p99    0.729   max    1.035
+    cell1        mean    0.256 Mb   p95    0.549   p99    0.747   max    1.040
+    cell2        mean    0.244 Mb   p95    0.522   p99    0.535   max    0.785
+    worst cell    max    1.040 Mb   imbalance 0.029 Mb
+  forecast MASE   0.9514   slot err 4.074 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 50.6837 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (10 rows)
+
+replicate 4 done in 97s
+
+##############################################################################
+REPLICATE 5   test seeds [116, 117, 118]   train seeds [500116, 500117, 500118]
+test traffic generated in 13.9s   offered 761.6 Mb/s   rho = 0.914
+
+==============================================================================
+[rep 5] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.977  c1=1.000  c2=1.000   [nominal 0.98|0.98|0.98]
+    cell0: H_est=1.000   m_train=268.9 vs m_test=262.5 Mb/s (+2.4%)
+    cell1: H_est=1.000   m_train=264.4 vs m_test=255.4 Mb/s (+3.5%)
+    cell2: H_est=0.956   m_train=245.4 vs m_test=243.6 Mb/s (+0.8%)
+      linearP cell0: H_fit=0.965 sum(w)=0.976
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.935 sum(w)=0.952
+      dlinear cell0: val NMSE=0.2927  scaler mu=402.70 Mb sd=7.41 Mb
+      dlinear cell1: val NMSE=0.3950  scaler mu=395.77 Mb sd=9.11 Mb
+      dlinear cell2: val NMSE=0.3549  scaler mu=367.72 Mb sd=6.89 Mb
+    (train gen + fit: 8.0s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.58% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          761.6 Mb/s
+  backlog         mean    0.813 Mb   p95    1.241   p99    1.273   max    1.525
+    cell0        mean    0.255 Mb   p95    0.539   p99    0.556   max    0.998
+    cell1        mean    0.264 Mb   p95    0.533   p99    0.758   max    1.049
+    cell2        mean    0.293 Mb   p95    0.746   p99    0.962   max    1.068
+    worst cell    max    1.068 Mb   imbalance 0.038 Mb
+  forecast MASE   0.9256   slot err 3.710 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 35.7203 Mb per cell-period
+  (37s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.58% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          761.6 Mb/s
+  backlog         mean    0.813 Mb   p95    1.240   p99    1.273   max    1.557
+    cell0        mean    0.255 Mb   p95    0.539   p99    0.556   max    1.026
+    cell1        mean    0.264 Mb   p95    0.533   p99    0.758   max    1.038
+    cell2        mean    0.295 Mb   p95    0.747   p99    0.967   max    1.069
+    worst cell    max    1.069 Mb   imbalance 0.039 Mb
+  forecast MASE   0.9332   slot err 3.711 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 35.7203 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (12 rows)
+
+replicate 5 done in 95s
+
+##############################################################################
+REPLICATE 6   test seeds [119, 120, 121]   train seeds [500119, 500120, 500121]
+test traffic generated in 13.5s   offered 761.2 Mb/s   rho = 0.914
+
+==============================================================================
+[rep 6] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.930  c1=0.972  c2=0.944   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.983   m_train=249.6 vs m_test=253.4 Mb/s (-1.5%)
+    cell1: H_est=0.980   m_train=246.1 vs m_test=246.6 Mb/s (-0.2%)
+    cell2: H_est=0.922   m_train=250.7 vs m_test=261.2 Mb/s (-4.0%)
+      linearP cell0: H_fit=0.950 sum(w)=0.964
+      linearP cell1: H_fit=0.960 sum(w)=0.972
+      linearP cell2: H_fit=0.935 sum(w)=0.952
+      dlinear cell0: val NMSE=0.5237  scaler mu=376.01 Mb sd=7.84 Mb
+      dlinear cell1: val NMSE=0.4237  scaler mu=368.05 Mb sd=7.05 Mb
+      dlinear cell2: val NMSE=0.3505  scaler mu=375.34 Mb sd=6.49 Mb
+    (train gen + fit: 7.5s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.62% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          761.2 Mb/s
+  backlog         mean    0.803 Mb   p95    1.245   p99    1.276   max    1.588
+    cell0        mean    0.265 Mb   p95    0.534   p99    0.763   max    1.082
+    cell1        mean    0.284 Mb   p95    0.750   p99    0.968   max    1.089
+    cell2        mean    0.254 Mb   p95    0.533   p99    0.545   max    1.054
+    worst cell    max    1.089 Mb   imbalance 0.030 Mb
+  forecast MASE   0.9205   slot err 3.655 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 35.9002 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      8.62% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          761.2 Mb/s
+  backlog         mean    0.802 Mb   p95    1.245   p99    1.276   max    1.524
+    cell0        mean    0.264 Mb   p95    0.532   p99    0.763   max    1.076
+    cell1        mean    0.283 Mb   p95    0.750   p99    0.972   max    1.076
+    cell2        mean    0.255 Mb   p95    0.533   p99    0.546   max    1.019
+    worst cell    max    1.076 Mb   imbalance 0.029 Mb
+  forecast MASE   0.9265   slot err 3.675 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 35.9002 Mb per cell-period
+  (38s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (14 rows)
+
+replicate 6 done in 97s
+
+##############################################################################
+REPLICATE 7   test seeds [122, 123, 124]   train seeds [500122, 500123, 500124]
+test traffic generated in 14.7s   offered 766.6 Mb/s   rho = 0.920
+
+==============================================================================
+[rep 7] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=1.000  c1=1.000  c2=0.996   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.973   m_train=261.7 vs m_test=248.0 Mb/s (+5.5%)
+    cell1: H_est=0.990   m_train=234.0 vs m_test=251.3 Mb/s (-6.9%)
+    cell2: H_est=0.979   m_train=232.1 vs m_test=267.4 Mb/s (-13.2%)
+      linearP cell0: H_fit=0.970 sum(w)=0.980
+      linearP cell1: H_fit=0.940 sum(w)=0.956
+      linearP cell2: H_fit=0.965 sum(w)=0.976
+      dlinear cell0: val NMSE=0.4348  scaler mu=393.28 Mb sd=8.07 Mb
+      dlinear cell1: val NMSE=0.3859  scaler mu=350.98 Mb sd=6.87 Mb
+      dlinear cell2: val NMSE=0.4707  scaler mu=348.55 Mb sd=8.56 Mb
+    (train gen + fit: 7.8s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      7.97% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          766.6 Mb/s
+  backlog         mean    0.828 Mb   p95    1.243   p99    1.276   max    1.712
+    cell0        mean    0.289 Mb   p95    0.739   p99    0.768   max    1.073
+    cell1        mean    0.281 Mb   p95    0.735   p99    0.781   max    1.075
+    cell2        mean    0.258 Mb   p95    0.548   p99    0.573   max    1.211
+    worst cell    max    1.211 Mb   imbalance 0.031 Mb
+  forecast MASE   0.9171   slot err 3.884 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 33.1830 Mb per cell-period
+  (38s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots      7.97% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          766.6 Mb/s
+  backlog         mean    0.820 Mb   p95    1.244   p99    1.278   max    1.743
+    cell0        mean    0.278 Mb   p95    0.733   p99    0.764   max    1.068
+    cell1        mean    0.283 Mb   p95    0.744   p99    0.790   max    1.220
+    cell2        mean    0.260 Mb   p95    0.548   p99    0.574   max    1.290
+    worst cell    max    1.290 Mb   imbalance 0.023 Mb
+  forecast MASE   1.1184   slot err 4.770 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 33.1830 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (16 rows)
+
+replicate 7 done in 97s
+
+##############################################################################
+REPLICATE 8   test seeds [125, 126, 127]   train seeds [500125, 500126, 500127]
+test traffic generated in 14.3s   offered 736.4 Mb/s   rho = 0.884
+
+==============================================================================
+[rep 8] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=0.949  c1=0.985  c2=0.966   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.992   m_train=244.9 vs m_test=239.4 Mb/s (+2.3%)
+    cell1: H_est=1.000   m_train=253.9 vs m_test=240.4 Mb/s (+5.6%)
+    cell2: H_est=0.940   m_train=248.8 vs m_test=256.6 Mb/s (-3.1%)
+      linearP cell0: H_fit=0.945 sum(w)=0.960
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.940 sum(w)=0.956
+      dlinear cell0: val NMSE=0.4213  scaler mu=366.49 Mb sd=7.30 Mb
+      dlinear cell1: val NMSE=0.3499  scaler mu=382.36 Mb sd=8.64 Mb
+      dlinear cell2: val NMSE=0.3123  scaler mu=372.91 Mb sd=6.74 Mb
+    (train gen + fit: 7.5s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     11.60% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          736.4 Mb/s
+  backlog         mean    0.772 Mb   p95    1.197   p99    1.229   max    1.445
+    cell0        mean    0.264 Mb   p95    0.711   p99    0.738   max    1.051
+    cell1        mean    0.262 Mb   p95    0.712   p99    0.751   max    1.042
+    cell2        mean    0.246 Mb   p95    0.525   p99    0.538   max    0.768
+    worst cell    max    1.051 Mb   imbalance 0.018 Mb
+  forecast MASE   0.9260   slot err 3.950 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 48.3157 Mb per cell-period
+  (37s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     11.60% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          736.4 Mb/s
+  backlog         mean    0.770 Mb   p95    1.196   p99    1.228   max    1.442
+    cell0        mean    0.263 Mb   p95    0.711   p99    0.738   max    1.043
+    cell1        mean    0.260 Mb   p95    0.711   p99    0.749   max    1.042
+    cell2        mean    0.247 Mb   p95    0.525   p99    0.538   max    0.761
+    worst cell    max    1.043 Mb   imbalance 0.016 Mb
+  forecast MASE   0.9502   slot err 4.141 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 48.3157 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (18 rows)
+
+replicate 8 done in 96s
+
+##############################################################################
+REPLICATE 9   test seeds [128, 129, 130]   train seeds [500128, 500129, 500130]
+test traffic generated in 14.9s   offered 746.8 Mb/s   rho = 0.897
+
+==============================================================================
+[rep 9] sample_dt = 1.5s   1500 slots/period   4824 periods, start=24 (4800 decisions = 7200s measured)
+  train: 4200 samples = 6300s (1.75h), generated at 1.5s bins
+  H_meas (local Whittle, test window): c0=1.000  c1=0.959  c2=0.960   [nominal 0.98|0.98|0.98]
+    cell0: H_est=0.980   m_train=253.4 vs m_test=250.0 Mb/s (+1.4%)
+    cell1: H_est=1.000   m_train=257.4 vs m_test=242.1 Mb/s (+6.4%)granularity_study.py:1132: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  fig.tight_layout()
+granularity_study.py:1133: UserWarning: Creating legend with loc="best" can be slow with large amounts of data.
+  fig.savefig(f"{args.out_dir}/backlog_{tag}_{k}.png", dpi=120)
+
+    cell2: H_est=0.933   m_train=259.7 vs m_test=254.8 Mb/s (+2.0%)
+      linearP cell0: H_fit=0.955 sum(w)=0.968
+      linearP cell1: H_fit=0.955 sum(w)=0.968
+      linearP cell2: H_fit=0.955 sum(w)=0.968
+      dlinear cell0: val NMSE=0.4430  scaler mu=378.71 Mb sd=7.00 Mb
+      dlinear cell1: val NMSE=0.4080  scaler mu=388.10 Mb sd=7.25 Mb
+      dlinear cell2: val NMSE=0.5269  scaler mu=389.15 Mb sd=7.44 Mb
+    (train gen + fit: 8.1s)
+
+linearp
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     10.35% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          746.8 Mb/s
+  backlog         mean    0.780 Mb   p95    1.221   p99    1.254   max    1.499
+    cell0        mean    0.256 Mb   p95    0.528   p99    0.745   max    1.077
+    cell1        mean    0.274 Mb   p95    0.736   p99    0.952   max    1.065
+    cell2        mean    0.250 Mb   p95    0.523   p99    0.537   max    1.049
+    worst cell    max    1.077 Mb   imbalance 0.023 Mb
+  forecast MASE   0.9214   slot err 4.006 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 43.1065 Mb per cell-period
+  (37s)
+
+dlinear
+  loss ratio      0.000e+00   (0.000 Mb dropped)
+  wasted slots     10.35% avoidable (plan error)     0.00% unavoidable (system empty)
+  served          746.8 Mb/s
+  backlog         mean    0.780 Mb   p95    1.222   p99    1.255   max    1.481
+    cell0        mean    0.257 Mb   p95    0.533   p99    0.749   max    1.077
+    cell1        mean    0.273 Mb   p95    0.734   p99    0.942   max    1.054
+    cell2        mean    0.250 Mb   p95    0.522   p99    0.537   max    1.033
+    worst cell    max    1.077 Mb   imbalance 0.023 Mb
+  forecast MASE   0.9339   slot err 4.027 slots/cell/period
+  mismatch        deficit 0.0000 Mb / surplus 43.1065 Mb per cell-period
+  (37s)
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/metrics.csv (20 rows)
+
+replicate 9 done in 97s
+
+
+per-replicate summary -- loss ratio and mean backlog:
+  sample_dt=1.5s  dlinear: 0.00e+00 / 0.78Mb   linearp: 0.00e+00 / 0.78Mb
+pooled over R = 10 replicates (3 test + 3 train seeds each)
+alpha = 1.04   H = 0.980|0.980|0.980
+test 2h/replicate   500 sources/cell   fixed split 1|1|1   beam 833 Mb/s   buffer 1 MiB
+mean +/- SE of the mean; SE = sd/sqrt(R)
+
+========================================================================
+sample_dt = 1.5s   decisions/replicate = 4800
+  metric                             linearp           dlinear
+  loss_ratio               0.000e+00+/-0e+00 0.000e+00+/-0e+00
+  backlog_mean_Mb          7.836e-01+/-8e-03 7.821e-01+/-8e-03
+  backlog_sd_Mb            8.160e-02+/-4e-03 8.052e-02+/-3e-03
+  backlog_p95_Mb           1.219e+00+/-7e-03 1.219e+00+/-8e-03
+  backlog_p99_Mb           1.252e+00+/-7e-03 1.252e+00+/-7e-03
+  backlog_max_Mb           1.511e+00+/-3e-02 1.519e+00+/-3e-02
+  backlog_max_cell_Mb      1.077e+00+/-2e-02 1.083e+00+/-2e-02
+  backlog_mean_cell_max_Mb 2.734e-01+/-4e-03 2.723e-01+/-4e-03
+  backlog_imbalance_Mb     2.309e-02+/-3e-03 2.166e-02+/-3e-03
+  waste_avoidable_pct      1.031e+01+/-5e-01 1.031e+01+/-5e-01
+  served_Mbps              7.471e+02+/-4e+00 7.471e+02+/-4e+00
+  forecast_mase            9.225e-01+/-9e-04 9.648e-01+/-2e-02
+  forecast_mase_eq         9.225e-01+/-9e-04 9.648e-01+/-2e-02
+  forecast_mase_worst      9.272e-01+/-1e-03 1.017e+00+/-4e-02
+  forecast_sd_ratio        8.383e-01+/-6e-03 8.175e-01+/-7e-03
+  forecast_sd_ratio_eq     8.363e-01+/-6e-03 8.157e-01+/-6e-03
+  slot_err                 3.848e+00+/-4e-02 4.051e+00+/-1e-01
+  deficit_Mb_per_period    0.000e+00+/-0e+00 0.000e+00+/-0e+00
+  surplus_Mb_per_period    4.293e+01+/-2e+00 4.293e+01+/-2e+00
+  backlog_max_c0_Mb        1.055e+00+/-9e-03 1.056e+00+/-7e-03
+  backlog_max_c1_Mb        1.050e+00+/-7e-03 1.065e+00+/-2e-02
+  backlog_max_c2_Mb        1.014e+00+/-4e-02 1.016e+00+/-5e-02
+  backlog_mean_c0_Mb       2.651e-01+/-4e-03 2.637e-01+/-3e-03
+  backlog_mean_c1_Mb       2.631e-01+/-4e-03 2.627e-01+/-4e-03
+  backlog_mean_c2_Mb       2.553e-01+/-5e-03 2.557e-01+/-5e-03
+  backlog_p95_c0_Mb        6.454e-01+/-3e-02 6.462e-01+/-3e-02
+  backlog_p95_c1_Mb        6.451e-01+/-3e-02 6.300e-01+/-3e-02
+  backlog_p95_c2_Mb        5.657e-01+/-3e-02 5.660e-01+/-3e-02
+  backlog_p99_c0_Mb        7.300e-01+/-2e-02 7.302e-01+/-2e-02
+  backlog_p99_c1_Mb        7.899e-01+/-4e-02 7.878e-01+/-4e-02
+  backlog_p99_c2_Mb        6.640e-01+/-5e-02 6.648e-01+/-5e-02
+  backlog_sd_c0_Mb         2.136e-01+/-2e-03 2.129e-01+/-1e-03
+  backlog_sd_c1_Mb         2.126e-01+/-2e-03 2.124e-01+/-2e-03
+  backlog_sd_c2_Mb         2.104e-01+/-2e-03 2.105e-01+/-2e-03
+  forecast_mase_c0         9.216e-01+/-2e-03 9.342e-01+/-5e-03
+  forecast_mase_c1         9.227e-01+/-2e-03 9.867e-01+/-3e-02
+  forecast_mase_c2         9.232e-01+/-1e-03 9.736e-01+/-4e-02
+  forecast_sd_ratio_c0     8.387e-01+/-1e-02 8.218e-01+/-1e-02
+  forecast_sd_ratio_c1     8.412e-01+/-6e-03 8.208e-01+/-7e-03
+  forecast_sd_ratio_c2     8.290e-01+/-7e-03 8.045e-01+/-9e-03
+  slot_err_c0              3.840e+00+/-5e-02 4.098e+00+/-2e-01
+  slot_err_c1              3.858e+00+/-5e-02 4.051e+00+/-1e-01
+  slot_err_c2              3.845e+00+/-4e-02 4.003e+00+/-1e-01
+
+  PAIRED (same seeds; negative = first policy better).  t-interval at 95%
+    dmax_cell[linearp-dlinear] = -0.0060 +/- 0.0188 Mb   linearp better in 5/10
+    dimbalance[linearp-dlinear] = +0.0014 +/- 0.0025 Mb   linearp better in 2/10
+    dmax[linearp-dlinear] = -0.0083 +/- 0.0235 Mb   linearp better in 6/10
+    dmean[linearp-dlinear] = +0.0015 +/- 0.0019 Mb   linearp better in 3/10
+    dmase[linearp-dlinear] = -0.0423 +/- 0.0457    linearp better in 10/10
+    dmase_eq[linearp-dlinear] = -0.0423 +/- 0.0456    linearp better in 10/10
+    dmase_worst[linearp-dlinear] = -0.0897 +/- 0.1004    linearp better in 10/10
+  * dsd_ratio[linearp-dlinear] = +0.0208 +/- 0.0082    linearp better in 0/10
+  * dsd_ratio_eq[linearp-dlinear] = +0.0206 +/- 0.0079    linearp better in 0/10
+
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/summary_pooled.txt
+  saved results_alpha/beam833e6/exp0_alpha_a1p04/pooled.csv
+
+total 972s
