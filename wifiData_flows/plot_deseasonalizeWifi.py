@@ -50,20 +50,6 @@ def logscale(y, filt=D4):
     return out
 
 
-def wavelet_H(y, j_lo, j_hi):
-    """Weighted LS slope of the logscale diagram over scales [j_lo, j_hi]."""
-    rows = logscale(y)
-    j = np.array([r[0] for r in rows], float)
-    v = np.array([r[1] for r in rows], float)
-    w = np.array([r[2] for r in rows], float)
-    s = (j >= j_lo) & (j <= j_hi)
-    if s.sum() < 3:
-        raise ValueError(f"need >= 3 scales in [{j_lo}, {j_hi}], got {s.sum()}")
-    A = np.vstack([j[s], np.ones(int(s.sum()))]).T
-    W = np.diag(w[s])
-    return (np.linalg.solve(A.T @ W @ A, A.T @ W @ v[s])[0] + 1) / 2
-
-
 df = pd.read_csv(CSV, parse_dates=["date"]).sort_values("date").reset_index(drop=True)
 n = len(df)
 n_train = int(n * TRAIN_FRAC)
